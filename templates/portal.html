@@ -1,0 +1,120 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="portal">
+    <div class="portal-title h2">
+        <p>
+            Student Portal form
+        </p>
+    </div>
+    <div class="text-danger">
+        <i>Please fill all required information.</i>
+    </div>
+    <div class="portal-sect text-light">
+        <h6>Personal information</h6>
+    </div>
+    <div>
+        <form class="portal-form" action="javascript:0" method="POST" enctype="multipart/form-data">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-6 form-group">
+                            <label for="InputImage">Upload image</label>
+                            <input type="file" accept="image/*" class="form-control" name="image" id="InputImage"
+                                required>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 form-group">
+                    <label for="inputFirstname">FirstName</label>
+                    <input type="text" class="form-control" name="firstname" id="inputFirstname" required>
+                </div>
+
+                <div class="col-md-6 form-group">
+                    <label for="inputMiddlename">MiddleName</label>
+                    <input type="text" class="form-control" name="middlename" id="inputMiddlename" required>
+                </div>
+
+                <div class="col-md-6 form-group">
+                    <label for="inputLastname">LastName</label>
+                    <input type="text" class="form-control" name="lastname" id="inputLastname" required>
+                </div>
+
+                <div class="col-md-6 form-group">
+                    <label for="inputEmail">Email</label>
+                    <input type="email" class="form-control" name="email" id="inputEmail" required>
+                </div>
+
+                <div class="col-md-6 form-group">
+                    <label for="inputBirthDate">Date of birth</label>
+                    <input type="date" class="form-control" name="dob" id="inputBirthDate" required>
+                </div>
+
+                <div class="row gender-check">
+                    <div class="form-check ml-5">
+                        <input checked="true" type="radio" class="form-check-input" id="inputBirthDate" name="gender"
+                            value="male">
+                        <label for="inputBirthDate">Male</label>
+                    </div>
+
+                    <div class="form-check ml-3">
+                        <input type="radio" class="form-check-input" id="inputBirthDate1" name="gender" value="female">
+                        <label for="inputBirthDate">Female</label>
+                    </div>
+                </div>
+
+                <div class="col-md-6 form-group">
+                    <label for="inputPhone">Phone Number</label>
+                    <input type="number" class="form-control" name="phone_number" id="inputPhone" required>
+                </div>
+
+                <div class="col-md-6 form-group">
+                    <label for="inputAddress">Address</label>
+                    <textarea class="form-control" name="address" id="inputAddress" required> </textarea>
+                </div>
+
+                <div class="col-md-6 form-group">
+                    <label for="inputState">State of origin</label>
+                    <select id="inputState" class="custom-select state-select">
+                        <option selected disabled hidden>Select State</option>
+                    </select>
+                </div>
+
+                <div class="col-md-6 form-group">
+                    <label for="inputLocalGovt">Local Government</label>
+                    <select id="inputLocalGovt" class="custom-select local-govt-select">
+                        <option selected disabled hidden>Select Local Government</option>
+                    </select>
+                </div>
+
+                <div class="col-md-6 form-group">
+                    <label for="inputKin">Next of kin</label>
+                    <input type="text" class="form-control" name="next_of_kin" id="inputKin" required>
+                </div>
+            </div>
+            <div class="portal-sect text-light">
+                <h6>Academic Related Information</h6>
+            </div>
+            <div class="row">
+                <div class="col-md-6 form-group">
+                    <label for="inputJambScore">Jamb score</label>
+                    <input type="number" class="form-control" name="jamb_score" id="inputJambScore" required>
+                </div>
+            </div>
+
+            <div class="form-submit">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+
+    </div>
+</div>
+{% endblock %}
+
+{% block portal_active %}
+class = "nav-link active"
+{% endblock %}
+
+{% block portal_script %}
+<script src="{{ url_for('static', filename='js/portal.js') }}"></script>
+{% endblock %}

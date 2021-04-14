@@ -1,0 +1,30 @@
+.portal {
+    background-color: rgba(229, 200, 186, 0.5);
+    padding: 20px 10px 10px 10px;
+}
+
+.portal-title {
+    text-align: center;
+}
+
+.portal-sect {
+    background-color: #263238;
+    padding: 5px 3px;
+    margin: 5px 0;
+    border-radius: 3px;
+}
+
+.gender-check {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+
+.form-submit {
+    display: flex;
+    justify-content: center;
+}
+
+.form-submit button {
+    width: 200px;
+}

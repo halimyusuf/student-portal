@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="student-page">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="img-sect">
+                <div>
+                    <img src="{{ url_for('static', filename=['images/', student.image]|join('')) }}">
+                </div>
+                <div class="short-desc">
+                    <div class="student-name h6 pt-1"> {{ [student.firstname, student.lastname]|join(' ') }} </div>
+                    <div class="student-status">
+                        <div class="badge badge-dark">{{ student.status }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="portal-sect text-light">
+                <h6>Personal information</h6>
+            </div>
+            <div class="display-4 student-info py-1">
+                Email: {{ student.email }}
+            </div>
+            <div class="display-4 student-info py-1">
+                Gender: {{ student.gender }}
+            </div>
+            <div class="display-4 student-info py-1">
+                Phone Number: {{ student.phone_number }}
+            </div>
+            <div class="display-4 student-info py-1">
+                Date of birth: {{ student.dob }}
+            </div>
+            <div class="display-4 student-info py-1">
+                Address: {{ student.address }}
+            </div>
+        </div>
+    </div>
+
+    <div class="row other">
+        <div class="col-md-12 portal-sect text-light">
+            <h6>Other information</h6>
+        </div>
+
+        <div class="col-md-3">
+            <div class="display-4 student-info py-1">
+                State of origin: {{ student.state_of_origin }}
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="display-4 student-info py-1">
+                Local Govt: {{ student.local_govt }}
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row other">
+        <div class="col-md-12 portal-sect text-light">
+            <h6>Academics Related information</h6>
+        </div>
+
+        <div class="col-md-3">
+            <div class="display-4 student-info py-1">
+                Next of kin: {{ student.next_of_kin }}
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="display-4 student-info py-1">
+                jamb Score: {{ student.jamb_score }}
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="display-4 student-info py-1">
+                Status: {{ student.status }}
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="display-4 student-info py-1">
+                <div class="row">
+                    <label for="changeStatus">Status</label>
+                    <select id="change-status" class="custom-select">
+                        <option selected disabled hidden>Change Status</option>
+                        <option value="Admitted">
+                            Admitted</option>
+                        <option value="undecided">undecided</option>
+                        <option value="Denied admission">Denied
+                            admission</option>
+                    </select>
+                    <button class="btn btn-primary btn-sm mt-2 hide change-status-btn"
+                        id="{{['student', student.id]|join('-')}}">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock %}
+
+{% block student_script %}
+<script src="{{ url_for('static', filename='js/student.js') }}"></script>
+{% endblock %}

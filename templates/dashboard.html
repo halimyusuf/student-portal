@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="dashboard">
+    <div class="alert alert-primary" role="alert">
+        Info!, all students records table
+    </div>
+    <div class="dashboard-table">
+        <table id="example" class="display" style="width:100%">
+            <thead>
+                <tr>
+                    <th>S/n</th>
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th>Jamb Score</th>
+                    <th>Admission Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for student in students %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td> {{ [student.firstname, student.middlename, student.lastname]|join(' ') }} </td>
+                    <td> {{ student.gender }} </td>
+                    <td> {{ student.jamb_score }} </td>
+                    <td> {{student.status }} </td>
+                    <td>
+                        <div>
+                            <a href="{{ url_for('get_student', id=student.id) }}" class="btn btn-primary btn-sm"> <i
+                                    data-feather="user"></i> </a>
+                        </div>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
+
+{% block dashboard_active %}
+class = "nav-link active"
+{% endblock %}
+
+
+{% block dashboard_script %}
+<script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+{% endblock %}

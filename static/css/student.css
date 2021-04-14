@@ -1,0 +1,27 @@
+
+.img-sect img {
+    width: 90%;
+    height: 150px;
+    border: 5px solid #407bff;
+    margin-top: 5px;
+}
+
+.img-sect {
+    width: 70%;
+    background-color: rgba(229, 200, 186);
+    height: 230px;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.student-info {
+    font-size: 22px;
+}
+
+.other {
+    margin-top: 30px;
+}

@@ -1,0 +1,41 @@
+body {
+    margin-bottom: 55px;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background-color: black;
+    color: white;
+}
+
+.footer-content {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-cont {
+    margin-top: 20px;
+}
+
+.btn-primary {
+    background-color: #407bff;
+}
+
+
+.hide {
+    display: none;
+}
+
+.coloors {
+    color: #407bff;
+    color: #69084F;
+    color: #E5C8BA;
+    color: #263238;
+    color: #D2E2F0;
+}
